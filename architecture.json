@@ -1,0 +1,30 @@
+{
+  "project_type": "web_app",
+  "description": "Backend API and services only. This repo contains routes, controllers, services, models, and config. Frontend and infra live in other repos.",
+  "scope": "backend",
+  "backend": {
+    "language": "python",
+    "framework": "fastapi",
+    "feature_types": [
+      "file-upload"
+    ],
+    "version": "3.11",
+    "key_features": [
+      "JWT Authentication",
+      "Asynchronous processing"
+    ]
+  },
+  "frontend": {},
+  "languages": {
+    "backend_language": "python",
+    "backend_version": "3.11",
+    "backend_framework": "fastapi",
+    "backend_framework_version": "",
+    "backend_package_file": "requirements.txt",
+    "backend_package_manager": "pip",
+    "project_type": "web_app"
+  },
+  "feature_types": [
+    "file-upload"
+  ]
+}

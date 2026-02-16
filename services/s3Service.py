@@ -1,0 +1,1 @@
+# Placeholder for S3 service integration
