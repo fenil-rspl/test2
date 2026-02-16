@@ -172,3 +172,6 @@ backend/
 # Environment Variables
 - `DATABASE_URL`: Database connection string.
 - `SECRET_KEY`: Secret key for JWT.
+
+- `SECRET_KEY`: Secret key for JWT.
+- `UPLOAD_DIRECTORY`: Directory where uploaded files are stored.

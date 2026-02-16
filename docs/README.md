@@ -105,3 +105,5 @@ backend/
 1. Install dependencies: `pip install -r requirements.txt`
 2. Configure environment variables in `.env`
 3. Run the application: `uvicorn app:app --reload`
+
+4. Ensure the `UPLOAD_DIRECTORY` exists or is created automatically.
