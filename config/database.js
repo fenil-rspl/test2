@@ -15,3 +15,19 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+const config = require('./config');
+
+const connectDB = async () => {
+	try {
+		await mongoose.connect(config.databaseUrl, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true
+		});
+		console.log('MongoDB connected');
+	} catch (error) {
+		console.error('MongoDB connection error:', error);
+		process.exit(1);
+	}
+};
+
+module.exports = connectDB;

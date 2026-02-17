@@ -9,3 +9,5 @@ router.use('/users', userRoutes);
 router.get('/health', apiController.healthCheck);
 
 module.exports = router;
+
+router.use('/api', apiRoutes);

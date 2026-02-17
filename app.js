@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const errorHandler = require('./middleware/errorHandler');
+const connectDB = require('./config/database');
+
+connectDB();
 const routes = require('./routes/index');
 
 const app = express();
