@@ -1,4 +1,54 @@
-# Backend API Documentation
+# Backend Documentation
+
+## Folder Structure
+.
+├── config
+│   ├── config.js
+│   ├── constants.js
+│   └── database.js
+├── controllers
+│   ├── apiController.js
+│   ├── authController.js
+│   ├── fileController.py
+│   └── userController.js
+├── middleware
+│   └── errorHandler.js
+├── models
+│   └── User.js
+├── routes
+│   ├── auth.js
+│   ├── api.js
+│   ├── index.js
+│   └── users.js
+├── services
+│   ├── authService.js
+│   ├── fileService.py
+│   └── userService.js
+├── utils
+│   ├── helpers.js
+│   ├── logger.js
+│   └── validators.js
+└── server.js
+
+## API Reference
+### Users
+- **GET** `/api/users` - List users
+- **POST** `/api/users` - Create user
+
+### Auth
+- **POST** `/api/auth/login` - Login user
+- **POST** `/api/auth/register` - Register user
+
+## Data Models
+- **User**: Represents a user in the system with fields like id, username, email, and password.
+
+## Application Structure
+The application is structured into several layers: controllers handle the incoming requests, services contain the business logic, and models represent the data.
+
+## Environment Variables
+- `PORT`: The port on which the server runs (default is 3000).
+- `DATABASE_URL`: The URL for connecting to the database.
+- `JWT_SECRET`: Secret key for signing JWT tokens.# Backend API Documentation
 
 ## Folder Structure
 

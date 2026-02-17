@@ -1,4 +1,5 @@
 const authService = require('../services/authService');
+const { User } = require('../models/User');
 
 exports.login = async (req, res) => {
 	try {
