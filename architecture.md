@@ -1,24 +1,18 @@
 # Backend Architecture
 
 ## User Request
-string
-
-## Project Requirements from Uploaded Documents
-
---- FILE: string ---
-
-string
-
+code 
 
 ## Scope
 This repository contains **only backend code**: routes, controllers, services, models, middleware, config, and utils. No frontend or infra code.
 
 ## Features (backend only)
-- File Upload
+- REST API
+
 
 ## Tech Stack (this repo)
-- Language: python
-- Framework: fastapi
+- Language: javascript
+- Framework: django
 ## Details
 ```json
 {
@@ -26,29 +20,25 @@ This repository contains **only backend code**: routes, controllers, services, m
   "description": "Backend API and services only. This repo contains routes, controllers, services, models, and config. Frontend and infra live in other repos.",
   "scope": "backend",
   "backend": {
-    "language": "python",
-    "framework": "fastapi",
-    "feature_types": [
-      "file-upload"
-    ],
-    "version": "3.11",
+    "language": "javascript",
+    "framework": "express",
+    "feature_types": [],
+    "version": "18",
     "key_features": [
-      "JWT Authentication",
-      "Asynchronous processing"
+      "RESTful APIs",
+      "JWT Authentication"
     ]
   },
   "frontend": {},
   "languages": {
-    "backend_language": "python",
-    "backend_version": "3.11",
-    "backend_framework": "fastapi",
+    "backend_language": "javascript",
+    "backend_version": "18",
+    "backend_framework": "django",
     "backend_framework_version": "",
-    "backend_package_file": "requirements.txt",
-    "backend_package_manager": "pip",
+    "backend_package_file": "package.json",
+    "backend_package_manager": "npm",
     "project_type": "web_app"
   },
-  "feature_types": [
-    "file-upload"
-  ]
+  "feature_types": []
 }
 ```

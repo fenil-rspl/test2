@@ -1,177 +1,116 @@
-# Folder Structure
+# Backend API Documentation
+
+## Folder Structure
+
+```
 backend/
 ├── config/
+│   ├── config.js
 │   ├── config.py
+│   ├── constants.js
 │   ├── constants.py
+│   ├── database.js
 │   ├── database.py
 │   └── storage.py
 ├── controllers/
+│   ├── apiController.js
 │   ├── apiController.py
+│   ├── authController.js
 │   ├── authController.py
 │   ├── fileController.py
+│   ├── userController.js
 │   └── userController.py
 ├── docs/
 │   ├── BACKEND.md
 │   └── README.md
 ├── middleware/
+│   ├── auth.js
 │   ├── auth.py
+│   ├── cors.js
 │   ├── cors.py
+│   ├── errorHandler.js
 │   ├── errorHandler.py
 │   ├── fileValidation.py
 │   └── upload.py
 ├── models/
 │   ├── File.py
+│   ├── index.js
 │   ├── index.py
+│   ├── User.js
 │   └── User.py
 ├── routes/
+│   ├── api.js
 │   ├── api.py
+│   ├── auth.js
 │   ├── auth.py
 │   ├── files.py
+│   ├── index.js
 │   ├── index.py
+│   ├── users.js
 │   └── users.py
 ├── services/
+│   ├── authService.js
 │   ├── authService.py
 │   ├── fileService.py
 │   ├── s3Service.py
+│   ├── userService.js
 │   └── userService.py
 ├── utils/
+│   ├── helpers.js
 │   ├── helpers.py
+│   ├── logger.js
 │   ├── logger.py
+│   ├── validators.js
 │   └── validators.py
-├── .dockerignore
 ├── .env.example
 ├── .gitignore
+├── app.js
 ├── app.py
+├── architecture.json
+├── architecture.md
 ├── docker-compose.yml
 ├── Dockerfile
-├── README.md
+├── package.json
+├── readme.md
 ├── requirements.txt
+├── server.js
 └── server.py
+```
 
-# API Reference
-## GET /api/users
-- **Description**: List users
+## API Reference
+### Auth
+- **POST /api/auth/login**: Logs in a user.
+  - Request Body: `{ email, password }`
+  - Response: `{ token }`
 
-## POST /api/users
-- **Description**: Create user
+- **POST /api/auth/register**: Registers a new user.
+  - Request Body: `{ name, email, password }`
+  - Response: `{ user }`
 
-## GET /api/posts
-- **Description**: List posts
+### Users
+- **GET /api/users/:id**: Retrieves a user by ID.
+  - Response: `{ user }`
 
-## POST /api/posts
-- **Description**: Create post
+### Health Check
+- **GET /api/health**: Checks if the API is running.
+  - Response: `{ message: 'API is running' }`
 
-## GET /users/{user_id}
-- **Description**: Retrieve user by ID.
-- **Path Parameters**: `user_id`
-- **Response**: User object
+## Data Models
+### User
+- **name**: String
+- **email**: String (unique)
+- **password**: String
 
-## POST /upload/
-- **Description**: Upload a file.
-- **Request Body**: File
-- **Response**: Information about the uploaded file
-
-# Data Models
-## User
-- **Fields**: `id`, `username`, `email`, `full_name`
-
-## File
-- **Fields**: `id`, `filename`, `filepath`
-
-# Application Structure
-- **config/**: Configuration files and constants.
-- **controllers/**: Business logic and request handling.
+## Application Structure
+- **config/**: Configuration files.
+- **controllers/**: Business logic handlers.
+- **middleware/**: Middleware functions.
 - **models/**: Database models.
 - **routes/**: API routes.
 - **services/**: Business logic services.
-- **utils/**: Utility functions and helpers.
+- **utils/**: Utility functions.
 
-# Environment Variables
-- `DATABASE_URL`: Database connection string.
-- `SECRET_KEY`: Secret key for JWT.# Folder Structure
-backend/
-├── config/
-│   ├── config.py
-│   ├── constants.py
-│   ├── database.py
-│   └── storage.py
-├── controllers/
-│   ├── apiController.py
-│   ├── authController.py
-│   ├── fileController.py
-│   └── userController.py
-├── docs/
-│   ├── BACKEND.md
-│   └── README.md
-├── middleware/
-│   ├── auth.py
-│   ├── cors.py
-│   ├── errorHandler.py
-│   ├── fileValidation.py
-│   └── upload.py
-├── models/
-│   ├── File.py
-│   ├── index.py
-│   └── User.py
-├── routes/
-│   ├── api.py
-│   ├── auth.py
-│   ├── files.py
-│   ├── index.py
-│   └── users.py
-├── services/
-│   ├── authService.py
-│   ├── fileService.py
-│   ├── s3Service.py
-│   └── userService.py
-├── utils/
-│   ├── helpers.py
-│   ├── logger.py
-│   └── validators.py
-├── .dockerignore
-├── .env.example
-├── .gitignore
-├── app.py
-├── docker-compose.yml
-├── Dockerfile
-├── README.md
-├── requirements.txt
-└── server.py
-
-# API Reference
-## POST /token
-- **Description**: Authenticate user and return access token.
-- **Request Body**: `username`, `password`
-- **Response**: `access_token`, `token_type`
-
-## GET /users/{user_id}
-- **Description**: Retrieve user by ID.
-- **Path Parameters**: `user_id`
-- **Response**: User object
-
-## POST /upload/
-- **Description**: Upload a file.
-- **Request Body**: File
-- **Response**: Information about the uploaded file
-
-# Data Models
-## User
-- **Fields**: `id`, `username`, `email`, `full_name`
-
-## File
-- **Fields**: `id`, `filename`, `filepath`
-
-# Application Structure
-- **config/**: Configuration files and constants.
-- **controllers/**: Business logic and request handling.
-- **models/**: Database models.
-- **routes/**: API routes.
-- **services/**: Business logic services.
-- **utils/**: Utility functions and helpers.
-
-# Environment Variables
-- `DATABASE_URL`: Database connection string.
-- `SECRET_KEY`: Secret key for JWT.
-
-- `SECRET_KEY`: Secret key for JWT.
-- `UPLOAD_DIRECTORY`: Directory where uploaded files are stored.
+## Environment Variables
+- **PORT**: Port for the server to run on.
+- **DATABASE_URL**: MongoDB connection string.
+- **JWT_SECRET**: Secret key for JWT.
